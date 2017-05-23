@@ -15,7 +15,6 @@ public class KanyeTimer implements ActionListener {
 		//		System.out.println(timeLeft);
 		if(timeLeft>0)
 		{
-			System.out.println(timeLeft);
 			timeLeft-=4;
 		}
 	}

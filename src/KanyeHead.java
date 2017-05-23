@@ -60,7 +60,6 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 			whereClickedY=e.getY();
 			hasClicked=true;
 		}
-		System.out.println(e.getX()+" "+e.getY());
 	}
 
 	public void mouseReleased(MouseEvent e)
@@ -80,8 +79,8 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 		repaint();
 	}
 	public void paintHead(Graphics g){
-
-		Image img1 = Toolkit.getDefaultToolkit().getImage("resources/KanyeFace.png");
+		
+		Image img1 = Toolkit.getDefaultToolkit().getImage(getClass().getResource("KanyeFace.png"));
 		if(direction&&!lasers)
 		{
 			g.clearRect(500, 10, width, height);

@@ -3,6 +3,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
+
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.embed.swing.JFXPanel;
@@ -17,12 +19,11 @@ public class Music {
 	{
 		final JFXPanel fxPanel = new JFXPanel();
 		
-		playAudio("resources/Stronger.mp3");
+		playAudio(getClass().getResource("Stronger.mp3"));
 	}
-	public static void playAudio(String filename)
+	public static void playAudio(URL url)
 	{
-		String bip = filename;
-		Media hit = new Media(new File(bip).toURI().toString());
+		Media hit = new Media(url.toString());
 		mediaPlayer = new MediaPlayer(hit);
 		mediaPlayer.play();
 	}
