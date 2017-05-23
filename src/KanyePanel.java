@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -47,6 +48,7 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 			timer.paintTimer(g);
 
 			head.paintHead(g);
+			g.setColor(Color.BLACK);
 			g.drawString("Points: " + points, 50, 50);
 		}
 		if(endGame&&pressedPlay)
@@ -90,6 +92,13 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 			}
 			else if(head.getLaser()&&!test.isCorrect(head.returnX(), head.returnY()))
 			{
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
 				endGame();
 			}
 			else if(timer.getTimeLeft()==0)

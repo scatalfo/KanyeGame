@@ -16,7 +16,7 @@ public class KanyeTimer implements ActionListener {
 		if(timeLeft>0)
 		{
 			System.out.println(timeLeft);
-			timeLeft--;
+			timeLeft-=4;
 		}
 	}
 	public void paintTimer(Graphics g){

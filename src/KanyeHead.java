@@ -96,7 +96,7 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 		}
 		if(hasClicked&&direction&&!lasers)
 		{
-			g.setColor(Color.RED);
+			g.setColor(Color.MAGENTA);
 			g.drawLine(754, 241, whereClickedX, whereClickedY);
 			g.drawLine(639, 243, whereClickedX, whereClickedY);
 			lasers = true;
@@ -104,7 +104,7 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 		}
 		else if(hasClicked&&!direction&&!lasers)
 		{
-			g.setColor(Color.RED);
+			g.setColor(Color.MAGENTA);
 			g.drawLine(543, 243, whereClickedX, whereClickedY);
 			g.drawLine(655, 241, whereClickedX, whereClickedY);
 			lasers=true;
