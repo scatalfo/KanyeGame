@@ -88,7 +88,7 @@ public class KanyeTest {
 			"White Dress",
 			"Who Will Survive in America",
 			"Wolves"};
-    public String[] fakeSongs={"Deez nuts"};
+    public String[] fakeSongs={"All Night", "All Comes Up", "None of the Lights", "Wonderful", "Superflorous", "Sad News", "My Big Brother", "Racist Skinhead", "Shame Game", "Blood On The Trees", "Bounded To You", "Don't Tell Me Anything", "I'm the Champ", "We're the Champions", "Jesus Christian Flow", "Click", "Freezing", "Hottest Summer", "Evil Dreams", "Devil's New Makeup"};
 	int rnd = new Random().nextInt(realSongs.length);
     int rnd2 = new Random().nextInt(fakeSongs.length);
     int rnd3= (int) ( Math.random() * 2 + 1);
