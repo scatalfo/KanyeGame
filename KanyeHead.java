@@ -17,6 +17,10 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
   public boolean direction;
   int width=300;
   int height=461;
+  public boolean hasClicked;
+  public int whereClickedX;
+  public int whereClickedY;
+  public boolean lasers=false;
 
   public KanyeHead()
   {
@@ -50,12 +54,18 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 
   public void mousePressed(MouseEvent e)
   {
-    
+	  if(!lasers)
+	  {
+		  whereClickedX=e.getX();
+		  whereClickedY=e.getY();
+		  hasClicked=true;
+	  }
+	  System.out.println(e.getX()+" "+e.getY());
   }
 
   public void mouseReleased(MouseEvent e)
   {
-    // TODO Auto-generated method stub
+    hasClicked=false;
     
   }
 
@@ -66,21 +76,40 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
   }
   public void step()
   {
+
     repaint();
   }
-  public void paintComponent(Graphics g){
-    Image img1 = Toolkit.getDefaultToolkit().getImage("KanyeFace.png");
-    if(direction)
+  public void paintHead(Graphics g){
+
+    Image img1 = Toolkit.getDefaultToolkit().getImage("resources/KanyeFace.png");
+    if(direction&&!lasers)
     {
       g.clearRect(500, 10, width, height);
       g.drawImage(img1, 500, 10, this);
     }
-    else
+
+    else if(!direction&&!lasers)
     {
       g.clearRect(500, 10, width, height);
 
       g.drawImage(img1, 500 + width, 10, -width, height, this);
     }
+	if(hasClicked&&direction&&!lasers)
+	{
+		g.setColor(Color.RED);
+		g.drawLine(754, 241, whereClickedX, whereClickedY);
+		g.drawLine(639, 243, whereClickedX, whereClickedY);
+		lasers = true;
+
+	}
+	else if(hasClicked&&!direction&&!lasers)
+	{
+		g.setColor(Color.RED);
+		g.drawLine(543, 243, whereClickedX, whereClickedY);
+		g.drawLine(655, 241, whereClickedX, whereClickedY);
+		lasers=true;
+
+	}
     
 }
   public void mouseDragged(MouseEvent e)
@@ -90,7 +119,7 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
   }
   public void mouseMoved(MouseEvent e)
   {
-    if(e.getX()>500)
+    if(e.getX()>650)
     {
       
       direction=true;
@@ -100,7 +129,23 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
     }
   }
 
-
+  public boolean getLaser()
+  {
+	  return lasers;
+  }
+  public void setLaserFalse()
+  {
+	  lasers=false;
+	  hasClicked=false;
+  }
+  public int returnX()
+  {
+	  return whereClickedX;
+  }
+  public int returnY()
+  {
+	  return whereClickedY;
+  }
 
   
 
