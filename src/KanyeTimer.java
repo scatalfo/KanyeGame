@@ -13,26 +13,26 @@ public class KanyeTimer implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-//		System.out.println(timeLeft);
+		//		System.out.println(timeLeft);
 		if(timeLeft>0)
 		{
 			timeLeft--;
 		}
 	}
-	  public void paintTimer(Graphics g){
-		  g.setColor(Color.WHITE);
-		  g.drawLine(0, 1, (timeLeft+2), 1);
-		  g.setColor(Color.RED);
-		  g.drawLine(0, 1, timeLeft, 1);
-	  }
-	  public int getTimeLeft()
-	  {
-		  return timeLeft;
-	  }
-	  public void resetTimer()
-	  {
-		  timeLeft=1280;
-	  }
+	public void paintTimer(Graphics g){
+		g.setColor(Color.WHITE);
+		g.drawLine(0, 1, (timeLeft+2), 1);
+		g.setColor(Color.RED);
+		g.drawLine(0, 1, timeLeft, 1);
+	}
+	public int getTimeLeft()
+	{
+		return timeLeft;
+	}
+	public void resetTimer()
+	{
+		timeLeft=1280;
+	}
 
 
 }

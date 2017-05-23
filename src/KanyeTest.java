@@ -87,22 +87,22 @@ public class KanyeTest {
 			"Welcome to Heartbreak",
 			"White Dress",
 			"Who Will Survive in America",
-			"Wolves"};
-    public String[] fakeSongs={"All Night", "All Comes Up", "None Of The Lights", "Wonderful", "Superflorous", "Sad News", "My Big Brother", "Racist Skinhead", "Shame Game", "Blood On The Trees", "Bounded To You", "Don't Tell Me Anything", "I'm the Champ", "We're the Champions", "Jesus Christian Flow", "Click", "Freezing", "Hottest Summer", "Evil Dreams", "Devil's New Makeup", "Gold From Newmont Mining", "We're Going", "Everything I'm Not", "Lies", "Blur", "Popular", "Mother Close My Hands Pt.1", "Mother Close My Hands Pt.2", "S.O.S. Lights", "Love My Life", "Diamond Miner", "Dissapear", "Happy Mondays", "Yeezy Life", "Never Ever Let You Live This Down", "Let Me Go", "We'll Find A Way", "Coldest Story Ever Told", "No More Drugs For Me", "Hi Dad", "One Life, One Night", "My Mom's Boy", "Swerve", "Gossip", "Austin Powers"};
+	"Wolves"};
+	public String[] fakeSongs={"All Night", "All Comes Up", "None Of The Lights", "Wonderful", "Superflorous", "Sad News", "My Big Brother", "Racist Skinhead", "Shame Game", "Blood On The Trees", "Bounded To You", "Don't Tell Me Anything", "I'm the Champ", "We're the Champions", "Jesus Christian Flow", "Click", "Freezing", "Hottest Summer", "Evil Dreams", "Devil's New Makeup", "Gold From Newmont Mining", "We're Going", "Everything I'm Not", "Lies", "Blur", "Popular", "Mother Close My Hands Pt.1", "Mother Close My Hands Pt.2", "S.O.S. Lights", "Love My Life", "Diamond Miner", "Dissapear", "Happy Mondays", "Yeezy Life", "Never Ever Let You Live This Down", "Let Me Go", "We'll Find A Way", "Coldest Story Ever Told", "No More Drugs For Me", "Hi Dad", "One Life, One Night", "My Mom's Boy", "Swerve", "Gossip", "Austin Powers"};
 	int rnd = new Random().nextInt(realSongs.length);
-    int rnd2 = new Random().nextInt(fakeSongs.length);
-    int rnd3= (int) ( Math.random() * 2 + 1);
+	int rnd2 = new Random().nextInt(fakeSongs.length);
+	int rnd3= (int) ( Math.random() * 2 + 1);
 
-    Font f;
-	
-    public KanyeTest()
+	Font f;
+
+	public KanyeTest()
 	{
 	}
 	public void pickSongs()
 	{
-	     rnd = new Random().nextInt(realSongs.length);
-	     rnd2 = new Random().nextInt(fakeSongs.length);
-	     rnd3= (int) ( Math.random() * 2 + 1);
+		rnd = new Random().nextInt(realSongs.length);
+		rnd2 = new Random().nextInt(fakeSongs.length);
+		rnd3= (int) ( Math.random() * 2 + 1);
 	}
 	public void paintSongs(Graphics g)
 	{
@@ -110,19 +110,19 @@ public class KanyeTest {
 		g.setColor(Color.BLACK);
 		g.drawRect(50, 500, 500, 100);
 		g.drawRect(700, 500, 500, 100);
-    	Font f = g.getFont().deriveFont(30f);
-    	g.setFont(f);
-    	if(rnd3==1)
-    	{
-    		g.drawString(realSongs[rnd], 60, 560);
-    		g.drawString(fakeSongs[rnd2], 710, 560);
-    	}
-    	else if(rnd3==2)
-    	{
-    		g.drawString(fakeSongs[rnd2], 60, 560);
-    		g.drawString(realSongs[rnd], 710, 560);
+		Font f = g.getFont().deriveFont(30f);
+		g.setFont(f);
+		if(rnd3==1)
+		{
+			g.drawString(realSongs[rnd], 60, 560);
+			g.drawString(fakeSongs[rnd2], 710, 560);
+		}
+		else if(rnd3==2)
+		{
+			g.drawString(fakeSongs[rnd2], 60, 560);
+			g.drawString(realSongs[rnd], 710, 560);
 
-    	}
+		}
 
 	}
 	public boolean isCorrect(int x, int y)
@@ -140,7 +140,7 @@ public class KanyeTest {
 		}
 		return false;
 	}
-    
 
-	
+
+
 }

@@ -5,21 +5,21 @@ import javax.swing.JFrame;
 public class Main
 {
 
-  public static void main(String[] args)
-  {
-    JFrame window = new JFrame();
-    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	window.setBackground(Color.WHITE);
+	public static void main(String[] args)
+	{
+		JFrame window = new JFrame();
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setBackground(Color.WHITE);
 
-    window.setTitle("KanyeGame");
-    window.setBounds(30, 30, 1280, 720);
+		window.setTitle("KanyeGame");
+		window.setBounds(30, 30, 1280, 720);
 
-    window.add(new KanyePanel());
+		window.add(new KanyePanel());
 
 
-    
-    window.setVisible(true);
 
-  }
+		window.setVisible(true);
+
+	}
 
 }
