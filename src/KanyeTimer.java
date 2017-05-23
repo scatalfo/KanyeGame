@@ -9,13 +9,13 @@ public class KanyeTimer implements ActionListener {
 	public KanyeTimer()
 	{
 		Timer timer= new Timer(1000/60, this);
-		timer.start();
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		//		System.out.println(timeLeft);
 		if(timeLeft>0)
 		{
+			System.out.println(timeLeft);
 			timeLeft--;
 		}
 	}
@@ -33,6 +33,5 @@ public class KanyeTimer implements ActionListener {
 	{
 		timeLeft=1280;
 	}
-
 
 }

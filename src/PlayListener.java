@@ -6,6 +6,7 @@ public class PlayListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		KanyePanel.playPressed();
+		
 
 	}
 

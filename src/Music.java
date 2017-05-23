@@ -16,7 +16,7 @@ public class Music {
 	public Music()
 	{
 		final JFXPanel fxPanel = new JFXPanel();
-
+		
 		playAudio("resources/Stronger.mp3");
 	}
 	public static void playAudio(String filename)
@@ -26,13 +26,5 @@ public class Music {
 		mediaPlayer = new MediaPlayer(hit);
 		mediaPlayer.play();
 	}
-	public static void main(String[] args)
-	{
-		final JFXPanel fxPanel = new JFXPanel();
-
-		System.out.println("x");
-		playAudio("Stronger.mp3");
-	}
-
 
 }

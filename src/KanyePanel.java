@@ -28,7 +28,6 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 		Music stronger = new Music();
 		menu = new KanyeMenu();
 		this.add(menu.getPlayButton());
-		this.add(menu.getHelpButton());
 
 		//call the step() function 60 times per second
 		Timer timer = new Timer(1000/60, this);
@@ -39,6 +38,7 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 	{
 		if(!pressedPlay)
 		{
+			menu.paintMenu(g);
 		}
 		if(!endGame&&pressedPlay)
 		{
@@ -63,7 +63,6 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 		if(pressedPlay)
 		{
 			this.remove(menu.getPlayButton());
-			this.remove(menu.getHelpButton());
 
 			
 		}
