@@ -88,7 +88,7 @@ public class KanyeTest {
 			"White Dress",
 			"Who Will Survive in America",
 			"Wolves"};
-    public String[] fakeSongs={"All Night", "All Comes Up", "None of the Lights", "Wonderful", "Superflorous", "Sad News", "My Big Brother", "Racist Skinhead", "Shame Game", "Blood On The Trees", "Bounded To You", "Don't Tell Me Anything", "I'm the Champ", "We're the Champions", "Jesus Christian Flow", "Click", "Freezing", "Hottest Summer", "Evil Dreams", "Devil's New Makeup"};
+    public String[] fakeSongs={"All Night", "All Comes Up", "None Of The Lights", "Wonderful", "Superflorous", "Sad News", "My Big Brother", "Racist Skinhead", "Shame Game", "Blood On The Trees", "Bounded To You", "Don't Tell Me Anything", "I'm the Champ", "We're the Champions", "Jesus Christian Flow", "Click", "Freezing", "Hottest Summer", "Evil Dreams", "Devil's New Makeup", "Gold From Newmont Mining", "We're Going", "Everything I'm Not", "Lies", "Blur", "Popular", "Mother Close My Hands Pt.1", "Mother Close My Hands Pt.2", "S.O.S. Lights", "Love My Life", "Diamond Miner", "Dissapear", "Happy Mondays", "Yeezy Life", "Never Ever Let You Live This Down", "Let Me Go", "We'll Find A Way", "Coldest Story Ever Told", "No More Drugs For Me", "Hi Dad", "One Life, One Night", "My Mom's Boy", "Swerve", "Gossip", "Austin Powers"};
 	int rnd = new Random().nextInt(realSongs.length);
     int rnd2 = new Random().nextInt(fakeSongs.length);
     int rnd3= (int) ( Math.random() * 2 + 1);
