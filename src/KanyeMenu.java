@@ -10,6 +10,7 @@ public class KanyeMenu {
 	public KanyeMenu()
 	{
 		playButton=new JButton("Play");
+		playButton.setLocation(100, 100);
 		   ActionListener playListener = new PlayListener();
 		   playButton.addActionListener(playListener);
 

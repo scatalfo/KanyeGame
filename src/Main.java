@@ -13,7 +13,7 @@ public class Main
 
 		window.setTitle("KanyeGame");
 		window.setBounds(30, 30, 1280, 720);
-
+		window.setResizable(false);
 		window.add(new KanyePanel());
 
 

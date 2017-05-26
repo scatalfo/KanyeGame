@@ -1,12 +1,18 @@
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.net.URL;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -29,7 +35,6 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 		Music stronger = new Music();
 		menu = new KanyeMenu();
 		this.add(menu.getPlayButton());
-
 		//call the step() function 60 times per second
 		Timer timer = new Timer(1000/60, this);
 		timer.start();
@@ -37,6 +42,12 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 	}
 	public void paintComponent(Graphics g)
 	{
+	    Toolkit t=Toolkit.getDefaultToolkit();  
+
+	    Image im=t.getImage(getClass().getResource("kanyeLaser.gif"));
+	    g.drawImage(im, 754,241,this);  //not implemented properly, Ben fix it so it shoots the laser at the right time
+
+
 		if(!pressedPlay)
 		{
 			menu.paintMenu(g);
@@ -65,6 +76,7 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 		if(pressedPlay)
 		{
 			this.remove(menu.getPlayButton());
+			this.setLayout(null);
 
 			
 		}
@@ -79,6 +91,7 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 			}
 			if(head.getLaser()&&test.isCorrect(head.returnX(), head.returnY()))
 			{
+				
 				try {
 					Thread.sleep(500);
 				} catch (InterruptedException e1) {

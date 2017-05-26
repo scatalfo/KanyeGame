@@ -8,7 +8,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.net.URL;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -79,8 +82,8 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 		repaint();
 	}
 	public void paintHead(Graphics g){
-		
 		Image img1 = Toolkit.getDefaultToolkit().getImage(getClass().getResource("KanyeFace.png"));
+
 		if(direction&&!lasers)
 		{
 			g.clearRect(500, 10, width, height);
@@ -98,14 +101,17 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 			g.setColor(Color.MAGENTA);
 			g.drawLine(754, 241, whereClickedX, whereClickedY);
 			g.drawLine(639, 243, whereClickedX, whereClickedY);
+
 			lasers = true;
 
 		}
 		else if(hasClicked&&!direction&&!lasers)
 		{
+
 			g.setColor(Color.MAGENTA);
 			g.drawLine(543, 243, whereClickedX, whereClickedY);
 			g.drawLine(655, 241, whereClickedX, whereClickedY);
+
 			lasers=true;
 
 		}
@@ -145,6 +151,7 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 	{
 		return whereClickedY;
 	}
+
 
 
 
