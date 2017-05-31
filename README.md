@@ -1,3 +1,3 @@
 # KanyeGame
 
-The best game ever seen by mankind!
+The best game ever seen by the entire universe!
