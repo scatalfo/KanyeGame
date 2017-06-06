@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -29,7 +30,7 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 		setFocusable(true);
 		addMouseListener(this);
 		addMouseMotionListener(this);
-		head=new KanyeHead();
+		head=new KanyeHead(this);
 		timer = new KanyeTimer();
 		test = new KanyeTest();
 		Music stronger = new Music();
@@ -40,13 +41,9 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 		timer.start();
 
 	}
+	
 	public void paintComponent(Graphics g)
 	{
-	    Toolkit t=Toolkit.getDefaultToolkit();  
-
-	    Image im=t.getImage(getClass().getResource("kanyeLaser.gif"));
-	    g.drawImage(im, 754,241,this);  //not implemented properly, Ben fix it so it shoots the laser at the right time
-
 
 		if(!pressedPlay)
 		{
@@ -59,6 +56,34 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 			timer.paintTimer(g);
 
 			head.paintHead(g);
+		    Toolkit t=Toolkit.getDefaultToolkit();  
+
+		    Image im=t.getImage(getClass().getResource("newKanyeLaser.gif"));
+		    if (head.isLeft().getBool()){
+		    	//g.drawImage(im, 754,241,null);  //not implemented properly, Ben fix it so it shoots the laser at the right time
+		    	try {
+			    	g.drawImage(im, head.isLeft().getX()-50,241,null);  //not implemented properly, Ben fix it so it shoots the laser at the right time
+
+					Thread.sleep(1);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		    	System.out.println("test left");
+		    }
+		    if (head.isRight().getBool()){
+		    	//g.drawImage(im, 754,241,null);  //not implemented properly, Ben fix it so it shoots the laser at the right time
+		    	try {
+			    	g.drawImage(im, head.isRight().getX()-50,241,null);  //not implemented properly, Ben fix it so it shoots the laser at the right time
+
+					Thread.sleep(1);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		    	System.out.println("test right");
+		    }
+
 			g.setColor(Color.BLACK);
 			g.drawString("Points: " + points, 50, 50);
 		}

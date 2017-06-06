@@ -24,13 +24,14 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 	public int whereClickedX;
 	public int whereClickedY;
 	public boolean lasers=false;
+	long lastLeft=System.currentTimeMillis();
+	long lastRight=System.currentTimeMillis();
 
-	public KanyeHead()
+	public KanyeHead(KanyePanel yeezus)
 	{
 		setFocusable(true);
 		addMouseListener(this);
 		addMouseMotionListener(this);
-
 
 		//call the step() function 60 times per second
 		Timer timer = new Timer(1000/60, this);
@@ -63,6 +64,16 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 			whereClickedY=e.getY();
 			hasClicked=true;
 		}
+		if(direction)
+		{
+			 lastRight=System.currentTimeMillis();
+
+		}
+		else
+		{
+			 lastLeft=System.currentTimeMillis();
+
+		}
 	}
 
 	public void mouseReleased(MouseEvent e)
@@ -83,7 +94,7 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 	}
 	public void paintHead(Graphics g){
 		Image img1 = Toolkit.getDefaultToolkit().getImage(getClass().getResource("KanyeFace.png"));
-
+		
 		if(direction&&!lasers)
 		{
 			g.clearRect(500, 10, width, height);
@@ -99,9 +110,8 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 		if(hasClicked&&direction&&!lasers)
 		{
 			g.setColor(Color.MAGENTA);
-			g.drawLine(754, 241, whereClickedX, whereClickedY);
-			g.drawLine(639, 243, whereClickedX, whereClickedY);
-
+			//g.drawLine(754, 241, whereClickedX, whereClickedY);
+			//g.drawLine(639, 243, whereClickedX, whereClickedY);
 			lasers = true;
 
 		}
@@ -109,9 +119,8 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 		{
 
 			g.setColor(Color.MAGENTA);
-			g.drawLine(543, 243, whereClickedX, whereClickedY);
-			g.drawLine(655, 241, whereClickedX, whereClickedY);
-
+			//g.drawLine(543, 243, whereClickedX, whereClickedY);
+			//g.drawLine(655, 241, whereClickedX, whereClickedY);
 			lasers=true;
 
 		}
@@ -151,8 +160,22 @@ public class KanyeHead extends JPanel implements ActionListener, MouseListener, 
 	{
 		return whereClickedY;
 	}
-
-
+	public BoolCoor isLeft(){
+		if (System.currentTimeMillis() - lastLeft < 1000){
+			return new BoolCoor(whereClickedX, whereClickedY, true);
+		}
+		else{
+			return new BoolCoor(whereClickedX, whereClickedY, false);
+		}
+	}
+	public BoolCoor isRight(){
+		if (System.currentTimeMillis() - lastRight < 1000){
+			return new BoolCoor(whereClickedX, whereClickedY, true);
+		}
+		else{
+			return new BoolCoor(whereClickedX, whereClickedY, false);
+		}
+	}
 
 
 }
