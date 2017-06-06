@@ -9,7 +9,7 @@ public class KanyeMenu {
 
 	public KanyeMenu()
 	{
-		playButton=new JButton("Play");
+		playButton=new JButton("'Ye Button");
 		playButton.setLocation(100, 100);
 		   ActionListener playListener = new PlayListener();
 		   playButton.addActionListener(playListener);
