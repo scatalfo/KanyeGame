@@ -22,6 +22,8 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 	public KanyeTimer timer;
 	public KanyeTest test;
 	public KanyeMenu menu;
+	public Music audio;
+	public OtherMusic otherAudio;
 	public static boolean pressedPlay=false;
 	public int points=0;
 	public boolean endGame=false;
@@ -33,7 +35,8 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 		head=new KanyeHead(this);
 		timer = new KanyeTimer();
 		test = new KanyeTest();
-		Music stronger = new Music();
+		audio = new Music();
+		otherAudio = new OtherMusic();
 		menu = new KanyeMenu();
 		this.add(menu.getPlayButton());
 		//call the step() function 60 times per second
@@ -51,6 +54,8 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 		}
 		if(!endGame&&pressedPlay)
 		{
+			audio.stronger();
+			otherAudio.play();
 			test.paintSongs(g);
 
 			timer.paintTimer(g);
@@ -60,28 +65,13 @@ public class KanyePanel extends JPanel implements ActionListener, MouseListener,
 
 		    Image im=t.getImage(getClass().getResource("newKanyeLaser.gif"));
 		    if (head.isLeft().getBool()){
-		    	//g.drawImage(im, 754,241,null);  //not implemented properly, Ben fix it so it shoots the laser at the right time
-		    	try {
-			    	g.drawImage(im, head.isLeft().getX()-50,241,null);  //not implemented properly, Ben fix it so it shoots the laser at the right time
-
-					Thread.sleep(1);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		    	System.out.println("test left");
+		    	//g.drawImage(im, head.isLeft().getX()-50,0,null);  //not implemented properly, Ben fix it so it shoots the laser at the right time
+		    	g.drawImage(im, head.isLeft().getX()-50, 0, 181, 650, null);
+		    	//System.out.println("test left");
 		    }
 		    if (head.isRight().getBool()){
-		    	//g.drawImage(im, 754,241,null);  //not implemented properly, Ben fix it so it shoots the laser at the right time
-		    	try {
-			    	g.drawImage(im, head.isRight().getX()-50,241,null);  //not implemented properly, Ben fix it so it shoots the laser at the right time
-
-					Thread.sleep(1);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		    	System.out.println("test right");
+		    	//g.drawImage(im, head.isRight().getX()-50,0,null);  //not implemented properly, Ben fix it so it shoots the laser at the right time
+		    	g.drawImage(im, head.isLeft().getX()-50, 0, 181, 650, null);
 		    }
 
 			g.setColor(Color.BLACK);
